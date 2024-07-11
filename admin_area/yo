@@ -1,0 +1,15 @@
+<?php
+
+if(isset($_GET['delete_user_orders'])){
+  $delete_user_order=$_GET['delete_user_orders'];
+  //echo  $delete_user_order;
+
+  $delete_query="Delete from `user_orders` where user_order_id=$delete_user_order";
+  $result=mysqli_query($con,$delete_query);
+  if($result){
+    echo "<script>alert('user_order is been Deleted successfuly')</script>";
+    echo "<script>window.open('./index.php?view_user_orders','_self')</script>";
+  }
+}
+?>
+
